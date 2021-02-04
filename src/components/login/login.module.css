@@ -1,0 +1,78 @@
+.board {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 600px;
+}
+
+.textBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  height: inherit;
+  border: 2px slateblue solid;
+}
+
+/* .textBox:hover {
+  -webkit-animation: slide-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes slide-right {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(500px);
+    transform: translateX(500px);
+  }
+} */
+
+.text {
+  font-size: 50px;
+}
+
+.btnBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  height: inherit;
+  padding: 0;
+  border: 2px #5f9ea0 solid;
+}
+
+/* .btnBox:hover {
+  -webkit-animation: slide-left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-500px);
+    transform: translateX(-500px);
+  }
+} */
+
+.btn {
+  margin: 0.5rem;
+  width: 18rem;
+  height: 3rem;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  border-radius: 1.5rem;
+  background-color: rgb(230, 154, 154);
+}
+
+.btn:hover {
+  box-shadow: 3px 3px 5px 0 rgba(94, 94, 94, 0.9);
+}

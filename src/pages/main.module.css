@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap");
+
+.background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(-135deg, #e4a972, #9941d8) fixed;
+}
+
+.btn {
+  font-size: 40px;
+  font-family: "Black Han Sans", sans-serif;
+  color: #ffffff;
+}
+
+.btn:hover {
+  color: #9941d8;
+}

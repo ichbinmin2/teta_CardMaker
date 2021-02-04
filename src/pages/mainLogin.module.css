@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap");
+
+.background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(-135deg, #e4a972, #9941d8) fixed;
+}
+
+.mainBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 0.6rem;
+  background-color: #ffffff;
+  box-shadow: 3px 3px 5px 0 rgba(133, 133, 133, 0.9);
+  animation: shadow-drop-2-center 1.5s ease-in-out;
+}
+
+@keyframes shadow-drop-2-center {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
+}
