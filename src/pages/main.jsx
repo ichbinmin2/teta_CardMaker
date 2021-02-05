@@ -11,7 +11,7 @@ const Main = (props) => {
     console.log(onStart);
   };
 
-  const handlerLoginPage = ({ onStart }) => {
+  const goToLoginPage = ({ onStart }) => {
     onStartClick(onStart);
     history.push("/login");
   };
@@ -19,7 +19,7 @@ const Main = (props) => {
   return (
     <section className={styles.background}>
       <div>
-        <button onClick={handlerLoginPage} className={styles.btn}>
+        <button onClick={goToLoginPage} className={styles.btn}>
           Card Maker Start!
         </button>
       </div>

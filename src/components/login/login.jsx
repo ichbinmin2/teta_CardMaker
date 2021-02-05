@@ -5,7 +5,7 @@ const Login = ({ authService }) => {
   const onLogin = (event) => {
     authService //
       .login(event.currentTarget.textContent)
-      .then(console.log);
+      .then(console.log("authService를 받아오고 이씁니다"));
   };
 
   return (
