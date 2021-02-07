@@ -1,13 +1,7 @@
 import React from "react";
 import styles from "../login/login.module.css";
 
-const Login = ({ authService }) => {
-  const onLogin = (event) => {
-    authService //
-      .login(event.currentTarget.textContent)
-      .then(console.log("authService를 받아오고 이씁니다"));
-  };
-
+const Login = ({ onLogin }) => {
   return (
     <section className={styles.section}>
       <div className={styles.loginBox}>

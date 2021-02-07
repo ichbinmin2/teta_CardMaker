@@ -3,17 +3,10 @@ import { useHistory } from "react-router-dom";
 import styles from "../pages/main.module.css";
 
 const Main = (props) => {
-  const [onStart, setOnstart] = useState(false);
   const history = useHistory();
 
-  const onStartClick = (event) => {
-    setOnstart(!onStart);
-    console.log(onStart);
-  };
-
-  const goToLoginPage = ({ onStart }) => {
-    onStartClick(onStart);
-    history.push("/login");
+  const goToLoginPage = () => {
+    history.push("/board");
   };
 
   return (
