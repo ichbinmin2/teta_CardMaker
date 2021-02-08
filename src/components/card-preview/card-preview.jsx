@@ -1,14 +1,15 @@
 import React from "react";
+import CardBox from "../card-box/card-box";
 import styles from "../card-preview/card-preview.module.css";
 
-const CardPreview = (props) => {
+const CardPreview = ({ card }) => {
   return (
     <section className={styles.previewBox}>
       <h1 className={styles.title}>Card Preview</h1>
       <ul>
-        <li>card1</li>
-        <li>card2</li>
-        <li>card3</li>
+        <li>
+          <CardBox card={card} />
+        </li>
       </ul>
     </section>
   );
