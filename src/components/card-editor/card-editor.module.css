@@ -1,0 +1,42 @@
+ul {
+  padding: 0;
+}
+
+.editorBox {
+  flex-basis: 50%;
+  background-color: palevioletred;
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+}
+
+.writeTable {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.td {
+  width: 100%;
+  border: 1px solid red;
+}
+
+.tr {
+  width: 100%;
+  border: 1px solid red;
+}
+
+input,
+textarea,
+select {
+  border: none;
+  outline: none;
+}
+
+input {
+  height: auto;
+  line-height: normal;
+  /* padding: 0.8em 0.5em; */
+}

@@ -1,0 +1,9 @@
+.previewBox {
+  flex-basis: 50%;
+  background-color: rgb(112, 168, 216);
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+}

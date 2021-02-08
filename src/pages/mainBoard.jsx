@@ -41,11 +41,13 @@ const MainBoard = ({ authService }) => {
     <section className={styles.background}>
       <div className={styles.mainBox}>
         <Nav authService={authService} id={id} onLogout={onLogout} />
-        {id === null ? (
-          <Login authService={authService} onLogin={onLogin} />
-        ) : (
-          <CardMaker />
-        )}
+        <div className={styles.container}>
+          {id === null ? (
+            <Login authService={authService} onLogin={onLogin} />
+          ) : (
+            <CardMaker />
+          )}
+        </div>
         <Footer />
       </div>
     </section>
