@@ -21,7 +21,7 @@ const MainBoard = ({ authService }) => {
     // data를 받으면 handlerMaker에 인자로 user.uid를 전달해준다.
   };
 
-  const onLogout = (userId) => {
+  const onLogout = () => {
     authService //
       .logout();
   };

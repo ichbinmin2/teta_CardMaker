@@ -13,7 +13,7 @@
 .mainBox {
   display: flex;
   flex-direction: column;
-  height: 700px;
+  height: 800px;
   width: 1200px;
   border-radius: 0.6rem;
   background-color: #ffffff;

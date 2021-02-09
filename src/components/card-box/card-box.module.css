@@ -1,0 +1,62 @@
+@value makerShadow, makerBlack, makerWhite, makerColorful, makerWheat from '../../common/colors.css';
+
+.profileCard {
+  box-sizing: border-box;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  margin: 15px 0 10px 0;
+  width: 90%;
+  border-radius: 0.5em;
+  box-shadow: 6px 6px 8px 0px makerShadow;
+  line-height: 1em;
+  max-width: 30rem;
+}
+
+.img {
+  width: 8em;
+  height: 8em;
+  margin-right: 30px;
+  border-radius: 50%;
+}
+
+.profile {
+  width: 100%;
+}
+
+.name {
+  font-size: 1.2rem;
+  margin-bottom: 0.3em;
+}
+
+.company::after {
+  content: "";
+  display: block;
+  width: 90%;
+  height: 2px;
+  background-color: makerWheat;
+  transform: translateY(0.5em);
+}
+
+.company,
+.p,
+.title {
+  font-size: 12px;
+}
+
+.title {
+  margin-top: 1em;
+}
+
+.profileCard.dark {
+  background-color: makerBlack;
+  color: makerWhite;
+}
+
+.profileCard.light {
+  background-color: makerWhite;
+}
+
+.profileCard.colorful {
+  background: makerColorful;
+}
