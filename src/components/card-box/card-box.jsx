@@ -4,7 +4,7 @@ import styles from "../card-box/card-box.module.css";
 const DEFAULT_IMAGE = "/images/default_logo.png";
 
 const CardBox = ({ card }) => {
-  //  디컨스트럭팅을 통해  props로 받은 card 안에 이 모든 정보들이 들어있게 만들었다.
+  //  디컨스트럭팅을 통해  props로 받은 card 안에 이 모든 정보들이 들어있게함.
   const {
     id,
     name,

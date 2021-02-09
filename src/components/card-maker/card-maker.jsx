@@ -40,24 +40,6 @@ const CardMaker = ({ authService }) => {
     },
   ]);
 
-  // const data = () => {
-  //   return card.map((item) => ({
-  //     id: item.id,
-  //     name: item.name,
-  //     company: item.company,
-  //     theme: item.theme,
-  //     title: item.title,
-  //     message: item.message,
-  //     fileName: item.fileName,
-  //     fileURL: item.fileURL,
-  //   }));
-  // };
-
-  // const handleAdd = (editedText) => {
-  //   setCard(editedText);
-  //   console.log(setCard);
-  // };
-
   return (
     <section className={styles.cardMakerBox}>
       <CardEditor cards={cards} />
