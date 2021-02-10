@@ -1,0 +1,5 @@
+@value makerLightGrey from "../../common/colors.css";
+
+.imageBtn {
+  background-color: makerLightGrey;
+}

@@ -2,10 +2,10 @@
 
 .profileCard {
   box-sizing: border-box;
-  padding: 20px;
   display: flex;
   align-items: center;
-  margin: 15px 0 10px 0;
+  margin-bottom: 1em;
+  padding: 20px;
   width: 90%;
   border-radius: 0.5em;
   box-shadow: 6px 6px 8px 0px makerShadow;

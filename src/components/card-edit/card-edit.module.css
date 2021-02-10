@@ -1,16 +1,42 @@
-.writeTable {
+@value makerWhite, makerGrey, makerLightGrey from "../../common/colors.css";
+
+.writeform {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1em;
+  width: 90%;
+  border-top: 1px solid makerLightGrey;
+  border-left: 1px solid makerLightGrey;
+}
+
+.input,
+.message,
+.select {
+  padding: 0.5em;
   width: 100%;
+  font-size: 0.8rem;
+  border: 0;
+  border-bottom: 1px solid makerLightGrey;
+  border-right: 1px solid makerLightGrey;
 }
 
-/* input,
-textarea,
-select {
-  border: none;
-  outline: none;
+.input,
+.select {
+  flex: 1 1 30%;
 }
 
-input {
-  height: auto;
-  line-height: normal;
-  padding: 0.8em 0.5em;
-} */
+.inputBtn {
+  padding: 0;
+  flex: 1 1 50%;
+  background-color: makerWhite;
+}
+
+.select:focus,
+.input:focus,
+.message:focus {
+  outline: 0;
+}
+
+.message {
+  flex-basis: 100%;
+}
