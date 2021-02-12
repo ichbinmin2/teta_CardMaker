@@ -4,8 +4,8 @@ import CardPreview from "../card-preview/card-preview";
 import styles from "../card-maker/card-maker.module.css";
 
 const CardMaker = ({ authService }) => {
-  const [cards, setCards] = useState([
-    {
+  const [cards, setCards] = useState({
+    1: {
       id: "1",
       name: "Teta Min",
       company: "Kakao Company",
@@ -16,7 +16,7 @@ const CardMaker = ({ authService }) => {
       fileName: "teta",
       fileURL: null,
     },
-    {
+    2: {
       id: "2",
       name: "Teta Min",
       company: "Kakao Company",
@@ -27,7 +27,7 @@ const CardMaker = ({ authService }) => {
       fileName: "teta",
       fileURL: "teta.png",
     },
-    {
+    3: {
       id: "3",
       name: "Teta Min",
       company: "Kakao Company",
@@ -38,11 +38,39 @@ const CardMaker = ({ authService }) => {
       fileName: "teta",
       fileURL: null,
     },
-  ]);
+  });
+
+  // const onAddCard = (card) => {
+  //   const updated = [...cards, card];
+  //   setCards(updated);
+  //   // cardAdd component에서 설정한 card 오브젝트를
+  //   // 인자로 받아와서 업데이트된 데이터를 다시 담아주는 함수임.
+  // };
+
+  const onAddOrUpdateCard = (card) => {
+    setCards((cards) => {
+      const updated = { ...cards };
+      updated[card.id] = card;
+      return updated;
+    });
+  };
+
+  const onDeleteCard = (card) => {
+    setCards((cards) => {
+      const updated = { ...cards };
+      delete updated[card.id];
+      return updated;
+    });
+  };
 
   return (
     <section className={styles.cardMakerBox}>
-      <CardEditor cards={cards} />
+      <CardEditor
+        cards={cards}
+        onAddCard={onAddOrUpdateCard}
+        updateCard={onAddOrUpdateCard}
+        deleteCard={onDeleteCard}
+      />
       <CardPreview cards={cards} />
     </section>
   );
