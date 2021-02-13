@@ -1,9 +1,10 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Button from "../button/button";
 import styles from "../card-add/card-add.module.css";
 import ImageInput from "../image_input/image_input";
 
-const CardAdd = ({ onAddCard }) => {
+const CardAdd = ({ FileInput, onAddCard }) => {
+  const [file, setFile] = useState({ fileName: null, fileURL: null });
   const formRef = useRef();
   const nameRef = useRef();
   const companyRef = useRef();
@@ -11,6 +12,14 @@ const CardAdd = ({ onAddCard }) => {
   const emailRef = useRef();
   const titleRef = useRef();
   const messageRef = useRef();
+
+  const onFileChange = (file) => {
+    console.log(file);
+    setFile({
+      fileName: file.name,
+      fileURL: file.url,
+    });
+  };
 
   // onAdd 하는 이벤트 함수
   const onSubmit = (event) => {
@@ -25,11 +34,12 @@ const CardAdd = ({ onAddCard }) => {
       title: emailRef.current.value || "",
       email: titleRef.current.value || "",
       message: messageRef.current.value || "",
-      fileName: "",
-      fileURL: "",
+      fileName: file.fileName || "",
+      fileURL: file.fileURL || "",
     };
     formRef.current.reset();
     // 사용자가 입력해서 add 하고 나면 form의 값이 비워지게끔 설정했다.
+    setFile({ fileName: null, fileURL: null });
     onAddCard(card);
   };
 
@@ -78,7 +88,7 @@ const CardAdd = ({ onAddCard }) => {
         className={styles.message}
       ></textarea>
       <div className={styles.inputBtn}>
-        <ImageInput />
+        <FileInput name={file.fileName} onFileChange={onFileChange} />
       </div>
       <Button name="Add" onClick={onSubmit} />
     </form>

@@ -1,9 +1,8 @@
 import React, { useRef } from "react";
 import Button from "../button/button";
 import styles from "../card-edit/card-edit.module.css";
-import ImageInput from "../image_input/image_input";
 
-const CardEdit = ({ card, updateCard, deleteCard }) => {
+const CardEdit = ({ FileInput, card, updateCard, deleteCard }) => {
   const formRef = useRef();
   const nameRef = useRef();
   const companyRef = useRef();
@@ -24,6 +23,14 @@ const CardEdit = ({ card, updateCard, deleteCard }) => {
     fileURL,
   } = card;
 
+  const onFileChange = (file) => {
+    updateCard({
+      ...card,
+      fileName: file.name,
+      fileURL: file.url,
+    });
+  };
+
   const onChange = (event) => {
     if (event.currentTarget === null) {
       return;
@@ -41,6 +48,7 @@ const CardEdit = ({ card, updateCard, deleteCard }) => {
     });
   };
 
+  const uploadImage = (event) => {};
   const onSubmit = () => {
     deleteCard(card);
   };
@@ -97,7 +105,7 @@ const CardEdit = ({ card, updateCard, deleteCard }) => {
         onChange={onChange}
       ></textarea>
       <div className={styles.inputBtn}>
-        <ImageInput />
+        <FileInput name={name} onFileChange={onFileChange} />
       </div>
       <Button name="Delete" onClick={onSubmit} />
     </form>

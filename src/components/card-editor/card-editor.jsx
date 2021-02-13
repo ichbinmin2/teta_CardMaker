@@ -3,7 +3,13 @@ import CardAdd from "../card-add/card-add";
 import CardEdit from "../card-edit/card-edit";
 import styles from "../card-editor/card-editor.module.css";
 
-const CardEditor = ({ cards, onAddCard, updateCard, deleteCard }) => {
+const CardEditor = ({
+  FileInput,
+  cards,
+  onAddCard,
+  updateCard,
+  deleteCard,
+}) => {
   return (
     <section className={styles.editorBox}>
       <h1 className={styles.title}>Card Maker</h1>
@@ -11,12 +17,13 @@ const CardEditor = ({ cards, onAddCard, updateCard, deleteCard }) => {
         {Object.keys(cards).map((key) => (
           <CardEdit
             key={key}
+            FileInput={FileInput}
             card={cards[key]}
             updateCard={updateCard}
             deleteCard={deleteCard}
           />
         ))}
-        <CardAdd onAddCard={onAddCard} />
+        <CardAdd FileInput={FileInput} onAddCard={onAddCard} />
       </ul>
     </section>
   );

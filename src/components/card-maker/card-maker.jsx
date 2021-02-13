@@ -3,7 +3,7 @@ import CardEditor from "../card-editor/card-editor";
 import CardPreview from "../card-preview/card-preview";
 import styles from "../card-maker/card-maker.module.css";
 
-const CardMaker = ({ authService }) => {
+const CardMaker = ({ FileInput }) => {
   const [cards, setCards] = useState({
     1: {
       id: "1",
@@ -62,10 +62,11 @@ const CardMaker = ({ authService }) => {
       return updated;
     });
   };
-
+  const uploadImage = () => {};
   return (
     <section className={styles.cardMakerBox}>
       <CardEditor
+        FileInput={FileInput}
         cards={cards}
         onAddCard={onAddOrUpdateCard}
         updateCard={onAddOrUpdateCard}

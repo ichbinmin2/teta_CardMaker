@@ -5,7 +5,7 @@ import Login from "../components/login/login";
 import styles from "../pages/mainBoard.module.css";
 import CardMaker from "../components/card-maker/card-maker";
 
-const MainBoard = ({ authService }) => {
+const MainBoard = ({ FileInput, authService }) => {
   const [id, setId] = useState(null);
 
   const handlerMaker = (userId) => {
@@ -45,7 +45,7 @@ const MainBoard = ({ authService }) => {
           {id === null ? (
             <Login authService={authService} onLogin={onLogin} />
           ) : (
-            <CardMaker />
+            <CardMaker FileInput={FileInput} />
           )}
         </div>
         <Footer />
