@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
 import Button from "../button/button";
 import styles from "../card-add/card-add.module.css";
-import ImageInput from "../image_input/image_input";
 
 const CardAdd = ({ FileInput, onAddCard }) => {
   const [file, setFile] = useState({ fileName: null, fileURL: null });
