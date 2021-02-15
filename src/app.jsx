@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import MainBoard from "./pages/mainBoard";
 import Main from "./pages/main";
 
-function App({ FileInput, authService }) {
+function App({ FileInput, authService, cardRepository }) {
   return (
     <BrowserRouter>
       <Switch>
@@ -11,7 +11,11 @@ function App({ FileInput, authService }) {
           <Main />
         </Route>
         <Route path="/board">
-          <MainBoard authService={authService} FileInput={FileInput} />
+          <MainBoard
+            authService={authService}
+            FileInput={FileInput}
+            cardRepository={cardRepository}
+          />
         </Route>
       </Switch>
     </BrowserRouter>

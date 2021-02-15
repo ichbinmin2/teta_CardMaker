@@ -5,20 +5,22 @@ import Login from "../components/login/login";
 import styles from "../pages/mainBoard.module.css";
 import CardMaker from "../components/card-maker/card-maker";
 
-const MainBoard = ({ FileInput, authService }) => {
+const MainBoard = ({ FileInput, authService, cardRepository }) => {
   const [id, setId] = useState(null);
+  const [userId, setUserId] = useState(null);
 
-  const handlerMaker = (userId) => {
-    setId(userId);
+  const handlerMaker = (user) => {
+    setId(user);
+  };
+
+  const handlerData = (user) => {
+    userId && setUserId(userId);
   };
 
   const onLogin = (event) => {
     authService //
       .login(event.currentTarget.textContent)
-      // login 안에
-      // event가 발생한 currentTarget이 발생한 textContent를 읽어올 것이다.
       .then((data) => handlerMaker(data.user.uid));
-    // data를 받으면 handlerMaker에 인자로 user.uid를 전달해준다.
   };
 
   const onLogout = () => {
@@ -30,7 +32,8 @@ const MainBoard = ({ FileInput, authService }) => {
     authService //
       .userLogin((user) => {
         if (user) {
-          handlerMaker(user.id);
+          handlerMaker(user.uid);
+          handlerData(user.uid);
         } else {
           handlerMaker(null);
         }
@@ -45,7 +48,11 @@ const MainBoard = ({ FileInput, authService }) => {
           {id === null ? (
             <Login authService={authService} onLogin={onLogin} />
           ) : (
-            <CardMaker FileInput={FileInput} />
+            <CardMaker
+              FileInput={FileInput}
+              id={id}
+              cardRepository={cardRepository}
+            />
           )}
         </div>
         <Footer />

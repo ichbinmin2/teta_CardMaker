@@ -22,6 +22,10 @@ class AuthService {
       onUserChanged(user);
     });
   }
+
+  realTime() {
+    firebase.database();
+  }
 }
 
 export default AuthService;
