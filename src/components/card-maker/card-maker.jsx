@@ -3,7 +3,7 @@ import CardEditor from "../card-editor/card-editor";
 import CardPreview from "../card-preview/card-preview";
 import styles from "../card-maker/card-maker.module.css";
 
-const CardMaker = ({ FileInput, userId, cardRepository }) => {
+const CardMaker = ({ FileInput, id, cardRepository }) => {
   const [cards, setCards] = useState({});
 
   const onAddOrUpdateCard = (card) => {
@@ -12,7 +12,7 @@ const CardMaker = ({ FileInput, userId, cardRepository }) => {
       updated[card.id] = card;
       return updated;
     });
-    cardRepository.saveCard(userId, card);
+    cardRepository.saveCard(id, card);
   };
 
   const onDeleteCard = (card) => {
@@ -21,7 +21,7 @@ const CardMaker = ({ FileInput, userId, cardRepository }) => {
       delete updated[card.id];
       return updated;
     });
-    cardRepository.removeCard(userId, card);
+    cardRepository.removeCard(id, card);
   };
 
   return (

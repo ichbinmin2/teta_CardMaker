@@ -7,12 +7,9 @@ import CardMaker from "../components/card-maker/card-maker";
 
 const MainBoard = ({ FileInput, authService, cardRepository }) => {
   const [id, setId] = useState(null);
-  const [userId, setUserId] = useState(null);
 
   const handlerMaker = (user) => {
     setId(user);
-    setUserId(user);
-    console.log(setUserId);
   };
 
   const onLogin = (event) => {
@@ -35,7 +32,7 @@ const MainBoard = ({ FileInput, authService, cardRepository }) => {
           handlerMaker(null);
         }
       });
-  }, []);
+  });
 
   return (
     <section className={styles.background}>
@@ -47,7 +44,7 @@ const MainBoard = ({ FileInput, authService, cardRepository }) => {
           ) : (
             <CardMaker
               FileInput={FileInput}
-              userId={userId}
+              id={id}
               cardRepository={cardRepository}
             />
           )}
