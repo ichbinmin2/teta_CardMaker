@@ -11,10 +11,8 @@ const MainBoard = ({ FileInput, authService, cardRepository }) => {
 
   const handlerMaker = (user) => {
     setId(user);
-  };
-
-  const handlerData = (user) => {
-    userId && setUserId(userId);
+    setUserId(user);
+    console.log(setUserId);
   };
 
   const onLogin = (event) => {
@@ -33,12 +31,11 @@ const MainBoard = ({ FileInput, authService, cardRepository }) => {
       .userLogin((user) => {
         if (user) {
           handlerMaker(user.uid);
-          handlerData(user.uid);
         } else {
           handlerMaker(null);
         }
       });
-  }, [authService]);
+  }, []);
 
   return (
     <section className={styles.background}>
@@ -46,11 +43,11 @@ const MainBoard = ({ FileInput, authService, cardRepository }) => {
         <Nav authService={authService} id={id} onLogout={onLogout} />
         <div className={styles.container}>
           {id === null ? (
-            <Login authService={authService} onLogin={onLogin} />
+            <Login onLogin={onLogin} />
           ) : (
             <CardMaker
               FileInput={FileInput}
-              id={id}
+              userId={userId}
               cardRepository={cardRepository}
             />
           )}
