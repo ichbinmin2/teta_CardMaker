@@ -1,7 +1,7 @@
-import React from "react";
+import React, { memo } from "react";
 import styles from "../nav/nav.module.css";
 
-const Nav = ({ onLogout, id }) => {
+const Nav = memo(({ onLogout, id }) => {
   return (
     <header className={styles.header}>
       <span> Business Card Maker </span>
@@ -12,6 +12,6 @@ const Nav = ({ onLogout, id }) => {
       ) : null}
     </header>
   );
-};
+});
 
 export default Nav;

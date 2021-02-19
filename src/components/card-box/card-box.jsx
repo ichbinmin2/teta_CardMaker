@@ -1,9 +1,9 @@
-import React from "react";
+import React, { memo } from "react";
 import styles from "../card-box/card-box.module.css";
 
 const DEFAULT_IMAGE = "/images/default_logo.png";
 
-const CardBox = ({ card }) => {
+const CardBox = memo(({ card }) => {
   //  디컨스트럭팅을 통해  props로 받은 card 안에 이 모든 정보들이 들어있게함.
   const { name, company, theme, title, email, message, fileURL } = card;
   const url = fileURL || DEFAULT_IMAGE;
@@ -20,7 +20,7 @@ const CardBox = ({ card }) => {
       </div>
     </li>
   );
-};
+});
 
 function getThemeStyles(theme) {
   switch (theme) {

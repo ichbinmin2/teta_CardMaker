@@ -37,7 +37,7 @@ const MainBoard = ({ FileInput, authService, cardRepository }) => {
   return (
     <section className={styles.background}>
       <div className={styles.mainBox}>
-        <Nav authService={authService} id={id} onLogout={onLogout} />
+        <Nav id={id} onLogout={onLogout} />
         <div className={styles.container}>
           {id === null ? (
             <Login onLogin={onLogin} />

@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { memo } from "react";
 import { useHistory } from "react-router-dom";
 import styles from "../pages/main.module.css";
 
-const Main = (props) => {
+const Main = memo(() => {
   const history = useHistory();
 
   const goToLoginPage = () => {
@@ -18,6 +18,6 @@ const Main = (props) => {
       </div>
     </section>
   );
-};
+});
 
 export default Main;
