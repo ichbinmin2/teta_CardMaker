@@ -19,16 +19,13 @@ const CardAdd = ({ FileInput, onAddCard }) => {
     });
   };
 
-  // onAdd 하는 이벤트 함수
   const onSubmit = (event) => {
     event.preventDefault();
     const card = {
-      id: Date.now(), //userid 를 랜덤으로 받아오는 식
+      id: Date.now(),
       name: nameRef.current.value || "",
-      // nameRef 안의 current.value가 없으면 "" 비워두고 아니면 그대로 사용하겠다는 의미
       company: companyRef.current.value || "",
       theme: themeRef.current.value,
-      // theme은 이미 정해진 옵션값(3개)이 있기 때문에 비워저 있을 수가 없다.
       title: emailRef.current.value || "",
       email: titleRef.current.value || "",
       message: messageRef.current.value || "",
@@ -36,7 +33,6 @@ const CardAdd = ({ FileInput, onAddCard }) => {
       fileURL: file.fileURL || "",
     };
     formRef.current.reset();
-    // 사용자가 입력해서 add 하고 나면 form의 값이 비워지게끔 설정했다.
     setFile({ fileName: null, fileURL: null });
     onAddCard(card);
   };

@@ -1,30 +1,30 @@
-import firebase from "firebase";
-import firebaseApp from "./firebase";
+import { firebaseAuth, githubProvider, googleProvider } from "./firebase";
 
-// 인증만을 관리하는 class 생성
 class AuthService {
   login(providerName) {
-    // 어떤 provider를 쓸 것인지 전달만 해주면 그에 따른
-    // AuthProvier()를 실행할 수 있게끔 만들 것임
-    // var provider = new firebase.auth.{providerName}AuthProvider();
-    // 이 식이 중복되기 때문에 {providerName}만 바꿔서 받아올 수 있도록 식을 작성!!!
-    const authProvider = new firebase.auth[`${providerName}AuthProvider`]();
-    return firebaseApp.auth().signInWithPopup(authProvider);
+    const authProvider = this.getProvider(providerName);
+    return firebaseAuth.signInWithPopup(authProvider);
   }
 
   logout() {
-    firebase.auth().signOut();
+    firebaseAuth.signOut();
   }
 
   userLogin(onUserChanged) {
-    //콜백함수를 인자로 받기
-    firebase.auth().onAuthStateChanged((user) => {
+    firebaseAuth.onAuthStateChanged((user) => {
       onUserChanged(user);
     });
   }
 
-  realTime() {
-    firebase.database();
+  getProvider(providerName) {
+    switch (providerName) {
+      case "Google":
+        return googleProvider;
+      case "Github":
+        return githubProvider;
+      default:
+        throw new Error(`not supported provider : ${providerName}`);
+    }
   }
 }
 

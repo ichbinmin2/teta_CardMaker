@@ -35,7 +35,7 @@ const CardMaker = ({ FileInput, id, cardRepository }) => {
       stopSync();
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [id]);
+  }, [id, cardRepository]);
 
   return (
     <section className={styles.cardMakerBox}>

@@ -11,7 +11,7 @@ const CardEdit = ({ FileInput, card, updateCard, deleteCard }) => {
   const titleRef = useRef();
   const messageRef = useRef();
 
-  const { id, name, company, theme, title, email, message, fileName } = card;
+  const { name, company, theme, title, email, message, fileName } = card;
 
   const onFileChange = (file) => {
     updateCard({
@@ -26,15 +26,9 @@ const CardEdit = ({ FileInput, card, updateCard, deleteCard }) => {
       return;
     }
     event.preventDefault();
-    // form의 새로고침을 방지
-    // event current target에 있는 name이 card의 key가 되고
-    // event current target에 있는 현재 값valu가
-    // 우리가 사용할 value가 될 것이다.
     updateCard({
-      ...card, // 받아온 기존의 card와 key와 value를 그대로 사용
+      ...card,
       [event.currentTarget.name]: event.currentTarget.value,
-      // event.currentTarget.name은 key가 되고
-      // event.currentTarget.value는 value가 될 수 있도록 설정해주었다.
     });
   };
 
