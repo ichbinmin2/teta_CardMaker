@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CardEditor from "../card-editor/card-editor";
 import CardPreview from "../card-preview/card-preview";
 import styles from "../card-maker/card-maker.module.css";
@@ -23,6 +23,19 @@ const CardMaker = ({ FileInput, id, cardRepository }) => {
     });
     cardRepository.removeCard(id, card);
   };
+
+  useEffect(() => {
+    if (!id) {
+      return;
+    }
+    const stopSync = cardRepository.syncCards(id, (cards) => {
+      setCards(cards);
+    });
+    return () => {
+      stopSync();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [id]);
 
   return (
     <section className={styles.cardMakerBox}>

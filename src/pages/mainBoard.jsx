@@ -6,6 +6,7 @@ import styles from "../pages/mainBoard.module.css";
 import CardMaker from "../components/card-maker/card-maker";
 
 const MainBoard = ({ FileInput, authService, cardRepository }) => {
+  const [cards, setCards] = useState();
   const [id, setId] = useState(null);
 
   const handlerMaker = (user) => {
