@@ -6,18 +6,18 @@ const Login = ({ onLogin }) => {
     <section className={styles.loginBox}>
       <div className={styles.textBox}>
         <span className={styles.text}>Welcome</span>
+        <div className={styles.egg}></div>
       </div>
       <ul className={styles.btnBox}>
-        <li>
+        <li className={styles.list}>
           <button className={styles.btn} onClick={onLogin}>
             Google
           </button>
-        </li>
-        <li>
           <button className={styles.btn} onClick={onLogin}>
             Github
           </button>
         </li>
+        <div className={styles.triangle}></div>
       </ul>
     </section>
   );

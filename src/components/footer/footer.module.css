@@ -1,9 +1,13 @@
-@value makerGreen from '../../common/colors.css';
+@value makerBlack from '../../common/colors.css';
 
 .footer {
   height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: makerGreen;
+  background-color: makerBlack;
+}
+
+.a {
+  color: white;
 }

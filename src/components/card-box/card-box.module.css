@@ -1,4 +1,4 @@
-@value makerShadow, makerBlack, makerWhite, makerColorful, makerWheat from '../../common/colors.css';
+@value makerShadow, makerBlack, makerWhite, makerPink, makerWheat from '../../common/colors.css';
 
 .profileCard {
   box-sizing: border-box;
@@ -58,5 +58,5 @@
 }
 
 .profileCard.colorful {
-  background: makerColorful;
+  background: makerPink;
 }
