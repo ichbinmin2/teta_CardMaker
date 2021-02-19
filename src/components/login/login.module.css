@@ -19,7 +19,7 @@
   justify-content: center;
   align-items: center;
   flex-basis: 50%;
-  background-color: palevioletred;
+  background-color: rgb(255, 255, 255);
 }
 
 .text {
@@ -32,7 +32,7 @@
   justify-content: center;
   align-items: center;
   flex-basis: 50%;
-  background-color: rgb(112, 168, 216);
+  background-color: rgb(255, 255, 255);
 }
 
 .btn {
