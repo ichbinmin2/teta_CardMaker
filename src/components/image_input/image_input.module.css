@@ -1,4 +1,4 @@
-@value makerLightPink, makerLightGrey from "../../common/colors.css";
+@value makerLightPink, makerLightGrey, makerPink from "../../common/colors.css";
 
 .container {
   width: 100%;
