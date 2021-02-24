@@ -58,7 +58,12 @@ const MainBoard = ({ FileInput, authService, cardRepository }) => {
           className={`${styles.cursor}
         ${cursor === true ? styles.cursorOver : styles.cursorLeave}`}
         ></div>
-        <Nav id={id} onLogout={onLogout} />
+        <Nav
+          id={id}
+          onLogout={onLogout}
+          onMouseLeave={HandlerCursorLeave}
+          onMouseOver={HandlerCursorOver}
+        />
         <div className={styles.container}>
           {id === null ? (
             <Login
