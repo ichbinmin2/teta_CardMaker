@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Nav from "../components/nav/nav";
 import Footer from "../components/footer/footer";
 import Login from "../components/login/login";
@@ -7,9 +7,25 @@ import CardMaker from "../components/card-maker/card-maker";
 
 const MainBoard = ({ FileInput, authService, cardRepository }) => {
   const [id, setId] = useState(null);
-
+  const [cursor, setCursor] = useState(false);
+  const divRef = useRef();
   const handlerMaker = (user) => {
     setId(user);
+  };
+
+  const HandlerCursorMove = (event) => {
+    const left = event.pageX + "px";
+    const top = event.pageY + "px";
+    divRef.current.style.left = left;
+    divRef.current.style.top = top;
+  };
+
+  const HandlerCursorOver = (event) => {
+    setCursor(true);
+  };
+
+  const HandlerCursorLeave = (event) => {
+    setCursor(false);
   };
 
   const onLogin = (event) => {
@@ -35,17 +51,28 @@ const MainBoard = ({ FileInput, authService, cardRepository }) => {
   }, [authService]);
 
   return (
-    <section className={styles.background}>
+    <section className={styles.background} onMouseMove={HandlerCursorMove}>
       <div className={styles.mainBox}>
+        <div
+          ref={divRef}
+          className={`${styles.cursor}
+        ${cursor === true ? styles.cursorOver : styles.cursorLeave}`}
+        ></div>
         <Nav id={id} onLogout={onLogout} />
         <div className={styles.container}>
           {id === null ? (
-            <Login onLogin={onLogin} />
+            <Login
+              onLogin={onLogin}
+              onMouseLeave={HandlerCursorLeave}
+              onMouseOver={HandlerCursorOver}
+            />
           ) : (
             <CardMaker
               FileInput={FileInput}
               id={id}
               cardRepository={cardRepository}
+              onMouseLeave={HandlerCursorLeave}
+              onMouseOver={HandlerCursorOver}
             />
           )}
         </div>

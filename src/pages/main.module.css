@@ -13,9 +13,7 @@
   font-size: 40px;
   font-family: "Black Han Sans", sans-serif;
   color: #ffffff;
-}
-
-.btn.after {
+  transition: font-size 0.3s ease;
   animation: tracking-in-contract-bck 1s cubic-bezier(0.215, 0.61, 0.355, 1)
     both;
 }
@@ -37,24 +35,24 @@
   }
 }
 
-.btn.before {
-  animation: tracking-out-expand-fwd 0.8s cubic-bezier(0.55, 0.085, 0.68, 0.53)
-    both;
+.btn:hover {
+  font-size: 50px;
 }
 
-@keyframes tracking-out-expand-fwd {
-  0% {
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    opacity: 1;
-  }
-  60% {
-    opacity: 0.8;
-  }
-  100% {
-    letter-spacing: 1em;
-    -webkit-transform: translateZ(300px);
-    transform: translateZ(300px);
-    opacity: 0;
-  }
+.cursor.cursorOver {
+  transform: scale(2);
+  background-color: black;
+}
+
+.cursor {
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid black;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  transition-property: background-color, transform;
+  transform-origin: 100% 100%;
 }

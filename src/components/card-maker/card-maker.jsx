@@ -3,7 +3,13 @@ import CardEditor from "../card-editor/card-editor";
 import CardPreview from "../card-preview/card-preview";
 import styles from "../card-maker/card-maker.module.css";
 
-const CardMaker = ({ FileInput, id, cardRepository }) => {
+const CardMaker = ({
+  FileInput,
+  id,
+  cardRepository,
+  onMouseLeave,
+  onMouseOver,
+}) => {
   const [cards, setCards] = useState({});
 
   const onAddOrUpdateCard = (card) => {
