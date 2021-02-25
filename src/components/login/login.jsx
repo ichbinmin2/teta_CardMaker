@@ -11,17 +11,45 @@ const Login = ({ onLogin, onMouseLeave, onMouseOver }) => {
   return (
     <section className={styles.loginBox}>
       <div className={`${show === true ? styles.textBox : styles.hideTextBox}`}>
-        <span className={styles.title}>Teta Company </span>
-        <span className={styles.title2}>Maker Bussiness</span>
-        <span className={styles.text}>당신의 명함을 정리해보세요</span>
+        <span
+          className={styles.title}
+          onMouseOver={onMouseOver}
+          onMouseLeave={onMouseLeave}
+        >
+          Teta Company{" "}
+        </span>
+        <span
+          className={styles.title2}
+          onMouseOver={onMouseOver}
+          onMouseLeave={onMouseLeave}
+        >
+          Maker Bussiness
+        </span>
+        <span
+          className={styles.text}
+          onMouseOver={onMouseOver}
+          onMouseLeave={onMouseLeave}
+        >
+          당신의 명함을 정리해보세요
+        </span>
 
         <div className={styles.egg}></div>
         {show === true ? (
-          <button className={styles.showBtn} onClick={handlerLoginBox}>
-            접어두기!
+          <button
+            className={styles.showBtn}
+            onClick={handlerLoginBox}
+            onMouseOver={onMouseOver}
+            onMouseLeave={onMouseLeave}
+          >
+            접어두기
           </button>
         ) : (
-          <button className={styles.showBtn} onClick={handlerLoginBox}>
+          <button
+            className={styles.showBtn}
+            onClick={handlerLoginBox}
+            onMouseOver={onMouseOver}
+            onMouseLeave={onMouseLeave}
+          >
             로그인하러 가기
           </button>
         )}

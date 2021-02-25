@@ -1,15 +1,16 @@
-@value makerShadow, makerBlack, makerWhite, makerPink, makerWheat from '../../common/colors.css';
+@value makerGreen, makerShadow, makerBlack, makerWhite, makerPink, makerWheat from '../../common/colors.css';
 
 .profileCard {
   box-sizing: border-box;
+  position: relative;
   display: flex;
   align-items: center;
   margin-bottom: 1em;
-  padding: 20px;
-  width: 90%;
-  box-shadow: 6px 6px 8px 0px makerShadow;
+  padding: 30px;
+  width: 75%;
   line-height: 1em;
   max-width: 30rem;
+  box-shadow: 6px 6px 8px 0px makerShadow;
 }
 
 .img {
@@ -21,6 +22,7 @@
 
 .profile {
   width: 100%;
+  z-index: 1;
 }
 
 .name {
@@ -58,4 +60,26 @@
 
 .profileCard.colorful {
   background: makerPink;
+}
+
+.semicircle {
+  position: absolute;
+  right: 20px;
+  width: 220px;
+  height: 120px;
+  background-color: makerGreen;
+  border-radius: 90% 50% 60% 30%;
+  animation: move 5s ease-in-out infinite;
+}
+
+@keyframes move {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
 }

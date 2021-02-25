@@ -12,7 +12,7 @@ const CardEditor = ({
 }) => {
   return (
     <section className={styles.editorBox}>
-      <h1 className={styles.title}>Card Maker</h1>
+      <h1 className={styles.title}>정보를 입력하세요</h1>
       <ul className={styles.editor}>
         {Object.keys(cards).map((key) => (
           <CardEdit

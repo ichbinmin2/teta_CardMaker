@@ -18,6 +18,7 @@ const CardBox = memo(({ card }) => {
         <p className={styles.p}>{email}</p>
         <p className={styles.p}>{message}</p>
       </div>
+      <div className={styles.semicircle}></div>
     </li>
   );
 });
