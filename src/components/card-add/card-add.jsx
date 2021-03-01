@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import Button from "../button/button";
 import styles from "../card-add/card-add.module.css";
 
-const CardAdd = ({ FileInput, onAddCard }) => {
+const CardAdd = ({ FileInput, onAddCard, onMouseLeave, onMouseOver }) => {
   const [file, setFile] = useState({ fileName: null, fileURL: null });
   const formRef = useRef();
   const nameRef = useRef();
@@ -82,9 +82,19 @@ const CardAdd = ({ FileInput, onAddCard }) => {
         className={styles.message}
       ></textarea>
       <div className={styles.inputBtn}>
-        <FileInput name={file.fileName} onFileChange={onFileChange} />
+        <FileInput
+          name={file.fileName}
+          onFileChange={onFileChange}
+          onMouseLeave={onMouseLeave}
+          onMouseOver={onMouseOver}
+        />
       </div>
-      <Button name="Add" onClick={onSubmit} />
+      <Button
+        name="Add"
+        onClick={onSubmit}
+        onMouseLeave={onMouseLeave}
+        onMouseOver={onMouseOver}
+      />
     </form>
   );
 };

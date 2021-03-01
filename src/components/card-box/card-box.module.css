@@ -1,4 +1,5 @@
-@value makerGreen, makerShadow, makerBlack, makerWhite, makerPink, makerWheat from '../../common/colors.css';
+@value mediaQuery, phoneSize from "../../common/size.css";
+@value makerColorful, makerPink, makerBlue, makerGreen, makerShadow, makerBlack, makerWhite from '../../common/colors.css';
 
 .profileCard {
   box-sizing: border-box;
@@ -7,17 +8,45 @@
   align-items: center;
   margin-bottom: 1em;
   padding: 30px;
-  width: 75%;
-  line-height: 1em;
+  width: 80%;
   max-width: 30rem;
+  line-height: 1em;
   box-shadow: 6px 6px 8px 0px makerShadow;
 }
 
+.deleteBtn {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.deleteText.showBox {
+  position: absolute;
+  top: 20px;
+  right: -12px;
+  width: 4em;
+  height: 1.5em;
+  text-align: center;
+  background-color: makerBlack;
+  border: 1px solid makerPink;
+  color: makerWhite;
+  font-size: 12px;
+}
+
+.deleteText.hideBox {
+  display: none;
+}
+
 .img {
+  margin-right: 30px;
   width: 8em;
   height: 8em;
-  margin-right: 30px;
   border-radius: 50%;
+  z-index: 1;
 }
 
 .profile {
@@ -26,27 +55,32 @@
 }
 
 .name {
-  font-size: 1.2rem;
   margin-bottom: 0.3em;
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 
 .company::after {
   content: "";
   display: block;
   width: 90%;
-  height: 3px;
-  background-color: makerWheat;
+  height: 2px;
+  background-color: white;
   transform: translateY(0.5em);
+}
+
+.company {
+  font-weight: 600;
+}
+
+.title {
+  margin-top: 1em;
 }
 
 .company,
 .p,
 .title {
   font-size: 12px;
-}
-
-.title {
-  margin-top: 1em;
 }
 
 .profileCard.dark {
@@ -59,12 +93,12 @@
 }
 
 .profileCard.colorful {
-  background: makerPink;
+  background: makerColorful;
 }
 
 .semicircle {
   position: absolute;
-  right: 20px;
+  right: 30px;
   width: 220px;
   height: 120px;
   background-color: makerGreen;
@@ -81,5 +115,38 @@
   }
   100% {
     transform: rotate(0);
+  }
+}
+
+@media screen and (max-width: mediaQuery) {
+  .img {
+    width: 7em;
+    height: 7em;
+  }
+  .semicircle {
+    width: 180px;
+    height: 100px;
+  }
+}
+
+@media screen and (max-width: phoneSize) {
+  .profileCard {
+    padding: 15px;
+  }
+  .img {
+    width: 5em;
+    height: 5em;
+  }
+  .semicircle {
+    width: 100px;
+    height: 80px;
+  }
+  .name {
+    font-size: 13px;
+  }
+  .company,
+  .p,
+  .title {
+    font-size: 10px;
   }
 }

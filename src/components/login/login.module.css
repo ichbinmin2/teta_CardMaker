@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap");
-@value mediaQuery from "../../common/size.css";
-@value makerYellow, makerBlue, makerModern, makerBlack, makerBlue, makerGreen, makerPink from "../../common/colors.css";
+@value mediaQuery, phoneSize from "../../common/size.css";
+@value makerYellow, makerBlue, makerModern, makerBlack, makerBlue, makerGreen from "../../common/colors.css";
 
 .loginBox {
   display: flex;
@@ -58,6 +58,13 @@
   animation: move 5s ease-in-out infinite;
 }
 
+.container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  width: 100%;
+}
+
 .hideBtnBox {
   display: none;
 }
@@ -66,13 +73,11 @@
   position: absolute;
   border-radius: 1em 0 0 1em;
   padding: 8px;
-  right: 0;
   width: 35px;
   height: 150px;
   font-weight: 700;
   background-color: makerBlack;
   color: makerModern;
-  z-index: 1;
 }
 
 .showBtn:hover {
@@ -137,11 +142,10 @@
   }
 
   .showBtn {
-    border-radius: 1em 1em 0 0em;
     bottom: 0;
-    left: 34%;
     width: 150px;
     height: 35px;
+    border-radius: 1em 1em 0 0em;
   }
 
   .title,
@@ -163,5 +167,16 @@
   }
   100% {
     transform: rotate(0);
+  }
+}
+
+@media screen and (max-width: phoneSize) {
+  .title,
+  .title2 {
+    font-size: 30px;
+  }
+
+  .title2 {
+    margin-top: 80px;
   }
 }

@@ -51,8 +51,10 @@ const CardMaker = ({
         onAddCard={onAddOrUpdateCard}
         updateCard={onAddOrUpdateCard}
         deleteCard={onDeleteCard}
+        onMouseLeave={onMouseLeave}
+        onMouseOver={onMouseOver}
       />
-      <CardPreview cards={cards} />
+      <CardPreview cards={cards} deleteCard={onDeleteCard} />
     </section>
   );
 };

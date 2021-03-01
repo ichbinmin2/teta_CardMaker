@@ -2,7 +2,14 @@ import React, { useRef } from "react";
 import Button from "../button/button";
 import styles from "../card-edit/card-edit.module.css";
 
-const CardEdit = ({ FileInput, card, updateCard, deleteCard }) => {
+const CardEdit = ({
+  FileInput,
+  card,
+  updateCard,
+  deleteCard,
+  onMouseLeave,
+  onMouseOver,
+}) => {
   const formRef = useRef();
   const nameRef = useRef();
   const companyRef = useRef();
@@ -88,9 +95,19 @@ const CardEdit = ({ FileInput, card, updateCard, deleteCard }) => {
         onChange={onChange}
       ></textarea>
       <div className={styles.inputBtn}>
-        <FileInput name={fileName} onFileChange={onFileChange} />
+        <FileInput
+          name={fileName}
+          onFileChange={onFileChange}
+          onMouseLeave={onMouseLeave}
+          onMouseOver={onMouseOver}
+        />
       </div>
-      <Button name="Delete" onClick={onSubmit} />
+      <Button
+        name="Delete"
+        onClick={onSubmit}
+        onMouseLeave={onMouseLeave}
+        onMouseOver={onMouseOver}
+      />
     </form>
   );
 };

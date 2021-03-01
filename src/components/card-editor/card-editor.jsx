@@ -9,6 +9,8 @@ const CardEditor = ({
   onAddCard,
   updateCard,
   deleteCard,
+  onMouseLeave,
+  onMouseOver,
 }) => {
   return (
     <section className={styles.editorBox}>
@@ -21,9 +23,16 @@ const CardEditor = ({
             card={cards[key]}
             updateCard={updateCard}
             deleteCard={deleteCard}
+            onMouseLeave={onMouseLeave}
+            onMouseOver={onMouseOver}
           />
         ))}
-        <CardAdd FileInput={FileInput} onAddCard={onAddCard} />
+        <CardAdd
+          FileInput={FileInput}
+          onAddCard={onAddCard}
+          onMouseLeave={onMouseLeave}
+          onMouseOver={onMouseOver}
+        />
       </ul>
     </section>
   );

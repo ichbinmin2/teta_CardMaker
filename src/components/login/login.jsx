@@ -16,14 +16,14 @@ const Login = ({ onLogin, onMouseLeave, onMouseOver }) => {
           onMouseOver={onMouseOver}
           onMouseLeave={onMouseLeave}
         >
-          Teta Company{" "}
+          Teta's
         </span>
         <span
           className={styles.title2}
           onMouseOver={onMouseOver}
           onMouseLeave={onMouseLeave}
         >
-          Maker Bussiness
+          Card Maker
         </span>
         <span
           className={styles.text}
@@ -34,25 +34,27 @@ const Login = ({ onLogin, onMouseLeave, onMouseOver }) => {
         </span>
 
         <div className={styles.egg}></div>
-        {show === true ? (
-          <button
-            className={styles.showBtn}
-            onClick={handlerLoginBox}
-            onMouseOver={onMouseOver}
-            onMouseLeave={onMouseLeave}
-          >
-            접어두기
-          </button>
-        ) : (
-          <button
-            className={styles.showBtn}
-            onClick={handlerLoginBox}
-            onMouseOver={onMouseOver}
-            onMouseLeave={onMouseLeave}
-          >
-            로그인하러 가기
-          </button>
-        )}
+        <div className={styles.container}>
+          {show === true ? (
+            <button
+              className={styles.showBtn}
+              onClick={handlerLoginBox}
+              onMouseOver={onMouseOver}
+              onMouseLeave={onMouseLeave}
+            >
+              접어두기
+            </button>
+          ) : (
+            <button
+              className={styles.showBtn}
+              onClick={handlerLoginBox}
+              onMouseOver={onMouseOver}
+              onMouseLeave={onMouseLeave}
+            >
+              로그인하러 가기
+            </button>
+          )}
+        </div>
       </div>
 
       <ul className={`${show === true ? styles.btnBox : styles.hideBtnBox}`}>

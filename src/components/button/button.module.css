@@ -1,10 +1,10 @@
 @value makerGreen from "../../common/colors.css";
 
 .btn {
-  background-color: makerGreen;
   flex: 1 1 50%;
   padding: 0.5em;
   font-size: 0.8rem;
+  background-color: makerGreen;
 }
 
 .btn:hover {
