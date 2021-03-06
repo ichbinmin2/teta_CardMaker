@@ -17,11 +17,11 @@ const MainBoard = ({ FileInput, authService, cardRepository }) => {
     divRef.current.style.top = top;
   };
 
-  const HandlerCursorOver = (event) => {
+  const HandlerCursorOver = () => {
     setCursor(true);
   };
 
-  const HandlerCursorLeave = (event) => {
+  const HandlerCursorLeave = () => {
     setCursor(false);
   };
 
