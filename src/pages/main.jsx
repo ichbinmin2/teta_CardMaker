@@ -4,13 +4,11 @@ import styles from "../pages/main.module.css";
 
 const Main = memo(() => {
   const history = useHistory();
-  const [start, setStart] = useState(false);
   const [cursor, setCursor] = useState(false);
   const divRef = useRef();
   const buttonRef = useRef();
 
   const goToLoginPage = () => {
-    setStart(true);
     history.push("/board");
   };
 
@@ -21,11 +19,11 @@ const Main = memo(() => {
     divRef.current.style.top = top;
   };
 
-  const HandlerCursorOver = (event) => {
+  const HandlerCursorOver = () => {
     setCursor(true);
   };
 
-  const HandlerCursorLeave = (event) => {
+  const HandlerCursorLeave = () => {
     setCursor(false);
   };
 

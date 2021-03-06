@@ -5,7 +5,7 @@ const Nav = memo(({ onLogout, id, onMouseLeave, onMouseOver }) => {
   return (
     <header className={styles.header}>
       <span> Teta's Card Maker </span>
-      {id !== null ? (
+      {id && (
         <button
           className={styles.loginBtn}
           onClick={onLogout}
@@ -14,7 +14,7 @@ const Nav = memo(({ onLogout, id, onMouseLeave, onMouseOver }) => {
         >
           Logout
         </button>
-      ) : null}
+      )}
     </header>
   );
 });

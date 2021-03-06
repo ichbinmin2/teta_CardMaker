@@ -9,9 +9,6 @@ const MainBoard = ({ FileInput, authService, cardRepository }) => {
   const [id, setId] = useState(null);
   const [cursor, setCursor] = useState(false);
   const divRef = useRef();
-  const handlerMaker = (user) => {
-    setId(user);
-  };
 
   const HandlerCursorMove = (event) => {
     const left = event.pageX + "px";
@@ -26,6 +23,10 @@ const MainBoard = ({ FileInput, authService, cardRepository }) => {
 
   const HandlerCursorLeave = (event) => {
     setCursor(false);
+  };
+
+  const handlerMaker = (user) => {
+    setId(user);
   };
 
   const onLogin = (event) => {
