@@ -5,7 +5,7 @@
 
 ### ▪️ 프로젝트 개요
 + [Teta's Card Maker 사이트 바로가기](https://603ce6b8d579f1f8067c72df--teta-cardmaker.netlify.app/)
-+ [velog 프로젝트 회고]
++ [velog 프로젝트 회고](https://velog.io/@ichbinmin2/Toy-Project-Tetas-Card-Maker)
 
 ### ▪️ 기술 스택
 + ReactJS / React-Hooks / PostCss
