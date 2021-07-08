@@ -115,7 +115,7 @@ export default AuthService;
 #### 2) 카드 메이커 : 실시간 정보 입력
 
 > 진행과정 참조 (회고)
-> [TIL. 입력 값을 실시간으로 수정/ 삭제하기](https://velog.io/@ichbinmin2/TIL.-%EC%9E%85%EB%A0%A5-%EA%B0%92%EC%9D%84-%EC%8B%A4%EC%8B%9C%EA%B0%84%EC%9C%BC%EB%A1%9C-%EC%88%98%EC%A0%95-%EC%82%AD%EC%A0%9C%ED%95%98%EA%B8%B0)
+> > [TIL. 입력 값을 실시간으로 수정/ 삭제하기](https://velog.io/@ichbinmin2/TIL.-%EC%9E%85%EB%A0%A5-%EA%B0%92%EC%9D%84-%EC%8B%A4%EC%8B%9C%EA%B0%84%EC%9C%BC%EB%A1%9C-%EC%88%98%EC%A0%95-%EC%82%AD%EC%A0%9C%ED%95%98%EA%B8%B0)
 
 ![8](https://user-images.githubusercontent.com/53133662/124868090-37727c80-dffa-11eb-8c51-f1db2d2f3077.gif)
 - 해당 폼을 입력하는 태그마다 `useRef()` 를 설정해준 뒤, `event.current.target`이 업데이트 될 때마다 해당 card의 `name` 값을 `value` 값으로 업데이트 할 수 있도록 함수를 작성해주었습니다.
@@ -124,8 +124,8 @@ export default AuthService;
 #### 3) 카드 메이커 (이미지 업로드 서비스 Cloudinary)
 
 > 진행과정 참조 (회고)
-> [TIL. Cloudinary를 사용한 이미지 업로딩(1)](https://velog.io/@ichbinmin2/TIL.-Cloudinary%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%97%85%EB%A1%9C%EB%94%A91)
-> [TIL. Cloudinary를 사용한 이미지 업로딩(2)](https://velog.io/@ichbinmin2/TIL.-Cloudinary%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%97%85%EB%A1%9C%EB%94%A92-8k4iowy1)
+> > [TIL. Cloudinary를 사용한 이미지 업로딩(1)](https://velog.io/@ichbinmin2/TIL.-Cloudinary%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%97%85%EB%A1%9C%EB%94%A91)
+> > [TIL. Cloudinary를 사용한 이미지 업로딩(2)](https://velog.io/@ichbinmin2/TIL.-Cloudinary%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%97%85%EB%A1%9C%EB%94%A92-8k4iowy1)
 
 ![9](https://user-images.githubusercontent.com/53133662/124868194-625cd080-dffa-11eb-93a4-e1dc59d10b7a.gif)
 
@@ -157,7 +157,7 @@ export default ImageUploader;
 
 #### 4) 카드 메이커 페이지 (Firebase Realtime database)
 > 진행과정 참조 (회고)
-> [TIL. Firebase를 이용한 실시간 데이터 베이스 구현](https://velog.io/@ichbinmin2/TIL.-Firebase%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%8B%A4%EC%8B%9C%EA%B0%84-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EA%B5%AC%ED%98%84)
+> > [TIL. Firebase를 이용한 실시간 데이터 베이스 구현](https://velog.io/@ichbinmin2/TIL.-Firebase%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%8B%A4%EC%8B%9C%EA%B0%84-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EA%B5%AC%ED%98%84)
 
 ![5](https://user-images.githubusercontent.com/53133662/124866444-65a28d00-dff7-11eb-9c84-a80475159b95.gif)
 
