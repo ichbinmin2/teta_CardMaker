@@ -15,6 +15,10 @@
 - Firebase / Cloudinary
 - JavaScript(ES6) / HTML
 
+### ▪️ 프로젝트 기간
+
+- 2021.02.04 ~ 2021.02.25 
+
 ### ▪️ 진행 도구
 
 - Notion (프로젝트 기능 구현 계획과 일정 관리)
