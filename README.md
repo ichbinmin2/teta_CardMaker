@@ -40,12 +40,12 @@
 ### ▪️ 구현 기능 요약
 #### 1) 소셜 로그인 (Firebase Authentication)
 > 진행과정 참조 (회고)
-> [TIL. Firebase를 이용한 소셜 로그인 구현(1)](https://velog.io/@ichbinmin2/TIL.-Firebase%EC%9D%98)
-> [TIL. Firebase를 이용한 소셜 로그인 구현(2)](https://velog.io/@ichbinmin2/TIL.-Firebase%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%86%8C%EC%85%9C-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EA%B5%AC%ED%98%842)
+> > [TIL. Firebase를 이용한 소셜 로그인 구현(1)](https://velog.io/@ichbinmin2/TIL.-Firebase%EC%9D%98)
+> > [TIL. Firebase를 이용한 소셜 로그인 구현(2)](https://velog.io/@ichbinmin2/TIL.-Firebase%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%86%8C%EC%85%9C-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EA%B5%AC%ED%98%842)
 
 - Firebase Authentication 서비스를 이용한 구글, 깃허브 소셜 로그인을 구현했습니다. Firebase 를 Add 할 때 역시, 지난 토이 프로젝트에서 진행했던 것과 동일하게 Dependency Injection를 적극 활용하여 API 보안 관리를 진행하고자 .env 파일 안에서 API Key를 작성하고 전체적으로 firebase API를 받아오는 js 안에서 불러오도록 지정했습니다.
 
-<pre><code>{
+```jsx
 import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/database";
@@ -63,13 +63,13 @@ export const firebaseAuth = firebaseApp.auth();
 export const firebaseDatabase = firebaseApp.database();
 export const googleProvider = new firebase.auth.GoogleAuthProvider();
 export const githubProvider = new firebase.auth.GithubAuthProvider();
-}</code></pre>
+```
 
 - 그리고, 인증 서비스 기능만을 담당하는 auth_service.js를 만든 뒤 firebase에서 import해온 firebaseAuth, githubProvider, googleProvider 등으로 해당 auth service 내에서 class를 작성하고 각각의 용도에 맞는 (인증)서비스가 필요한 컴포넌트에서 받아오는 방식으로 구현했습니다.
 
 ![2](https://user-images.githubusercontent.com/53133662/124862637-b82c7b00-dff0-11eb-9f89-a286ea42ade8.gif)
 
-<pre><code>{
+```jsx
 import { firebaseAuth, githubProvider, googleProvider } from "./firebase";
 
 class AuthService {
@@ -101,7 +101,7 @@ class AuthService {
 }
 
 export default AuthService;
-}</code></pre>
+```
 
 - 인증 서비스 기능만을 담당하는 `auth_service.js` 안에서 로그인 함수를 작성하고 `firebase.js` 에서 import 해온 firebaseAuth에  `getProvider`와 `signInWithPopup`(firebase)메소드를 사용하여 인증 서비스가 필요한 컴포넌트에서 해당 함수를 받아오는 방식으로 구현했습니다.
 - Github와 Google 의 인증 서비스 API는 `switch` 문을 활용하여 각각의 인자가 case와 동일하면 그에 맞는 해당 소셜 인증 API 명령어로 받아올 수 있도록 설정해주었습니다.
@@ -131,7 +131,7 @@ export default AuthService;
 
 - Cloudinary를 적극 활용하여, 이미지 업로딩을 구현했습니다.
 
-<pre><code>{
+```jsx
 const url = process.env.REACT_APP_CLOUDINARY_API_KEY;
 const name = process.env.REACT_APP_CLOUDINARY_PROJECT_NAME;
 
@@ -150,7 +150,7 @@ class ImageUploader {
 }
 
 export default ImageUploader;
-}</code></pre>
+```
 
 - 이미지 업로더 기능만을 담당하는 `image_uploader.js` 안에서 `class` 를 만든뒤, 이미지 업로더 서비스가 필요한 컴포넌트에서 해당 함수를 받아오는 방식으로 구현했습니다.
 - 이벤트 함수와 조건식을 활용하여 css로 로딩스피너를 구현하였습니다.
@@ -163,7 +163,7 @@ export default ImageUploader;
 
 - firebase의 실시간 데이터베이스 서비스를 이용한 카드 메이커 페이지입니다.
 
-<pre><code>{
+```jsx
 import { firebaseDatabase } from "./firebase";
 
 class CardRepository {
@@ -186,7 +186,7 @@ class CardRepository {
 }
 
 export default CardRepository;
-}</code></pre>
+```
 
 - 실시간 데이터 서비스 기능만을 담당하는 `card_repository.js` 안에서 `class` 를 만든뒤, 로그인 함수를 작성하고 `set`와 `remove`(firebase)메소드를 사용하여 실시간 데이터 서비스가 필요한 컴포넌트에서 해당 함수를 받아오는 방식으로 데이터 저장/삭제 기능을 구현했습니다.
 
@@ -194,6 +194,18 @@ export default CardRepository;
 ![6](https://user-images.githubusercontent.com/53133662/124866739-da75c700-dff7-11eb-872b-39bb4061215b.gif)
 
 - Router와 useHistory()함수를 사용하여, 페이지를 이동하게 하였습니다. 
+```jsx
+        <Route exact path="/">
+          <Main />
+        </Route>
+        <Route path="/board">
+          <MainBoard
+            authService={authService}
+            FileInput={FileInput}
+            cardRepository={cardRepository}
+          />
+        </Route>
+```
 
 #### 6) 반응형 웹페이지 구현 및 애니메이션 구현
 ![7](https://user-images.githubusercontent.com/53133662/124866830-fc6f4980-dff7-11eb-9592-6e6b1cc96207.gif)
