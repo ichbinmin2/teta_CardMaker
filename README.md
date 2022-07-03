@@ -131,7 +131,7 @@ export const githubProvider = new firebase.auth.GithubAuthProvider();
 
 - 그리고, 인증 서비스 기능만을 담당하는 auth_service.js를 만든 뒤 firebase에서 import해온 firebaseAuth, githubProvider, googleProvider 등으로 해당 auth service 내에서 class를 작성하고 각각의 용도에 맞는 (인증)서비스가 필요한 컴포넌트에서 받아오는 방식으로 구현했습니다.
 
-![2](https://user-images.githubusercontent.com/53133662/124862637-b82c7b00-dff0-11eb-9f89-a286ea42ade8.gif)
+![ezgif com-gif-maker - 2022-07-03T195727 001](https://user-images.githubusercontent.com/53133662/177036466-9163e6fe-16ca-4410-8602-52f2343cc911.gif)
 
 ```jsx
 import { firebaseAuth, githubProvider, googleProvider } from "./firebase";
